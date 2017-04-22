@@ -1,0 +1,59 @@
+<?php
+
+namespace Esprit\GalerieBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Message
+ *
+ * @ORM\Table(name="message", indexes={@ORM\Index(name="fk_destinataire", columns={"fk_destinataire"}), @ORM\Index(name="fk_recepteur", columns={"fk_recepteur"})})
+ * @ORM\Entity
+ */
+class Message
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelle_message", type="string", length=50, nullable=false)
+     */
+    private $libelleMessage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_message", type="string", length=50, nullable=false)
+     */
+    private $dateMessage;
+
+    /**
+     * @var \Abonne
+     *
+     * @ORM\ManyToOne(targetEntity="Abonne")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_destinataire", referencedColumnName="id")
+     * })
+     */
+    private $fkDestinataire;
+
+    /**
+     * @var \Abonne
+     *
+     * @ORM\ManyToOne(targetEntity="Abonne")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_recepteur", referencedColumnName="id")
+     * })
+     */
+    private $fkRecepteur;
+
+
+}

@@ -1,0 +1,30 @@
+artiste:
+    path:     /
+    defaults: { _controller: "EspritGalerieBundle:Artiste:index" }
+
+artiste_show:
+    path:     /{id}/show
+    defaults: { _controller: "EspritGalerieBundle:Artiste:show" }
+
+artiste_new:
+    path:     /new
+    defaults: { _controller: "EspritGalerieBundle:Artiste:new" }
+
+artiste_create:
+    path:     /create
+    defaults: { _controller: "EspritGalerieBundle:Artiste:create" }
+    requirements: { _method: post }
+
+artiste_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EspritGalerieBundle:Artiste:edit" }
+
+artiste_update:
+    path:     /{id}/update
+    defaults: { _controller: "EspritGalerieBundle:Artiste:update" }
+    requirements: { _method: post|put }
+
+artiste_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EspritGalerieBundle:Artiste:delete" }
+    requirements: { _method: post|delete }

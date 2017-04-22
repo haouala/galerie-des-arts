@@ -1,0 +1,60 @@
+Salle:
+    type: entity
+    table: salle
+    indexes:
+        fk_proprietaire:
+            columns:
+                - fk_proprietaire
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomSalle:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: nom_salle
+        adresseSalle:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: adresse_salle
+        capaciteSalle:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: capacite_salle
+        noteSalle:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: note_salle
+        nbrSignaux:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: nbr_signaux
+    manyToOne:
+        fkProprietaire:
+            targetEntity: Proprietaire
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_proprietaire:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

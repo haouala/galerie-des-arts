@@ -1,0 +1,30 @@
+evenement:
+    path:     /
+    defaults: { _controller: "EspritGalerieBundle:Evenement:index" }
+
+evenement_show:
+    path:     /{id}/show
+    defaults: { _controller: "EspritGalerieBundle:Evenement:show" }
+
+evenement_new:
+    path:     /new
+    defaults: { _controller: "EspritGalerieBundle:Evenement:new" }
+
+evenement_create:
+    path:     /create
+    defaults: { _controller: "EspritGalerieBundle:Evenement:create" }
+    requirements: { _method: post }
+
+evenement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EspritGalerieBundle:Evenement:edit" }
+
+evenement_update:
+    path:     /{id}/update
+    defaults: { _controller: "EspritGalerieBundle:Evenement:update" }
+    requirements: { _method: post|put }
+
+evenement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EspritGalerieBundle:Evenement:delete" }
+    requirements: { _method: post|delete }

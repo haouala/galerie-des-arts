@@ -1,0 +1,30 @@
+element:
+    path:     /
+    defaults: { _controller: "EspritGalerieBundle:Element:index" }
+
+element_show:
+    path:     /{id}/show
+    defaults: { _controller: "EspritGalerieBundle:Element:show" }
+
+element_new:
+    path:     /new
+    defaults: { _controller: "EspritGalerieBundle:Element:new" }
+
+element_create:
+    path:     /create
+    defaults: { _controller: "EspritGalerieBundle:Element:create" }
+    requirements: { _method: post }
+
+element_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EspritGalerieBundle:Element:edit" }
+
+element_update:
+    path:     /{id}/update
+    defaults: { _controller: "EspritGalerieBundle:Element:update" }
+    requirements: { _method: post|put }
+
+element_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EspritGalerieBundle:Element:delete" }
+    requirements: { _method: post|delete }

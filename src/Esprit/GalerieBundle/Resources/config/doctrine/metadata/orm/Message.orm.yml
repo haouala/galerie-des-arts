@@ -1,0 +1,54 @@
+Message:
+    type: entity
+    table: message
+    indexes:
+        fk_destinataire:
+            columns:
+                - fk_destinataire
+        fk_recepteur:
+            columns:
+                - fk_recepteur
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelleMessage:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: libelle_message
+        dateMessage:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: date_message
+    manyToOne:
+        fkDestinataire:
+            targetEntity: Abonne
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_destinataire:
+                    referencedColumnName: id
+            orphanRemoval: false
+        fkRecepteur:
+            targetEntity: Abonne
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_recepteur:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

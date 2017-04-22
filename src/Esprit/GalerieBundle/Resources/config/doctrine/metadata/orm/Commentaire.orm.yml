@@ -1,0 +1,78 @@
+Commentaire:
+    type: entity
+    table: commentaire
+    indexes:
+        fk_salle:
+            columns:
+                - fk_salle
+        fk_evenement:
+            columns:
+                - fk_evenement
+        fk_element:
+            columns:
+                - fk_element
+        fk_abonne:
+            columns:
+                - fk_abonne
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelleCommentaire:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: libelle_commentaire
+        dateCommentaire:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: date_commentaire
+    manyToOne:
+        fkAbonne:
+            targetEntity: Abonne
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_abonne:
+                    referencedColumnName: id
+            orphanRemoval: false
+        fkElement:
+            targetEntity: Element
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_element:
+                    referencedColumnName: id
+            orphanRemoval: false
+        fkEvenement:
+            targetEntity: Evenement
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_evenement:
+                    referencedColumnName: id
+            orphanRemoval: false
+        fkSalle:
+            targetEntity: Salle
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_salle:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

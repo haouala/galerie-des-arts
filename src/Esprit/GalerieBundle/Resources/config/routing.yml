@@ -1,0 +1,31 @@
+esprit_galerie_message:
+    resource: "@EspritGalerieBundle/Resources/config/routing/message.yml"
+    prefix:   /message
+
+esprit_galerie_salle:
+    resource: "@EspritGalerieBundle/Resources/config/routing/salle.yml"
+    prefix:   /salle
+
+esprit_galerie_evenement:
+    resource: "@EspritGalerieBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
+
+esprit_galerie_element:
+    resource: "@EspritGalerieBundle/Resources/config/routing/element.yml"
+    prefix:   /element
+
+esprit_galerie_proprietaire:
+    resource: "@EspritGalerieBundle/Resources/config/routing/proprietaire.yml"
+    prefix:   /proprietaire
+
+esprit_galerie_abonne:
+    resource: "@EspritGalerieBundle/Resources/config/routing/abonne.yml"
+    prefix:   /abonne
+
+esprit_galerie_commentaire:
+    resource: "@EspritGalerieBundle/Resources/config/routing/commentaire.yml"
+    prefix:   /commentaire
+
+esprit_galerie_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EspritGalerieBundle:Default:index }

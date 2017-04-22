@@ -1,0 +1,68 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Artiste</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomabonne</th>
+                <td>{{ entity.nomAbonne }}</td>
+            </tr>
+            <tr>
+                <th>Prenomabonne</th>
+                <td>{{ entity.prenomAbonne }}</td>
+            </tr>
+            <tr>
+                <th>Datenaissanceabonne</th>
+                <td>{{ entity.dateNaissanceAbonne }}</td>
+            </tr>
+            <tr>
+                <th>Emailabonne</th>
+                <td>{{ entity.emailAbonne }}</td>
+            </tr>
+            <tr>
+                <th>Loginabonne</th>
+                <td>{{ entity.loginAbonne }}</td>
+            </tr>
+            <tr>
+                <th>Passwordabonne</th>
+                <td>{{ entity.passwordAbonne }}</td>
+            </tr>
+            <tr>
+                <th>Photoartiste</th>
+                <td>{{ entity.photoArtiste }}</td>
+            </tr>
+            <tr>
+                <th>Domaineart</th>
+                <td>{{ entity.domaineArt }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ entity.role }}</td>
+            </tr>
+            <tr>
+                <th>Isconnected</th>
+                <td>{{ entity.isConnected }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('artiste') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('artiste_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

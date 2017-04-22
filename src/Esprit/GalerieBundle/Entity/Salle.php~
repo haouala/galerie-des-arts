@@ -1,0 +1,70 @@
+<?php
+
+namespace Esprit\GalerieBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Salle
+ *
+ * @ORM\Table(name="salle", indexes={@ORM\Index(name="fk_proprietaire", columns={"fk_proprietaire"})})
+ * @ORM\Entity
+ */
+class Salle
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_salle", type="string", length=50, nullable=false)
+     */
+    private $nomSalle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse_salle", type="string", length=50, nullable=false)
+     */
+    private $adresseSalle;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="capacite_salle", type="integer", nullable=false)
+     */
+    private $capaciteSalle;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="note_salle", type="integer", nullable=false)
+     */
+    private $noteSalle;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbr_signaux", type="integer", nullable=false)
+     */
+    private $nbrSignaux;
+
+    /**
+     * @var \Proprietaire
+     *
+     * @ORM\ManyToOne(targetEntity="Proprietaire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_proprietaire", referencedColumnName="id")
+     * })
+     */
+    private $fkProprietaire;
+
+
+}

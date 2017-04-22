@@ -1,0 +1,67 @@
+Element:
+    type: entity
+    table: element
+    indexes:
+        fk_artiste:
+            columns:
+                - fk_artiste
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomElement:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: nom_element
+        prixElement:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+            column: prix_element
+        description:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        noteElement:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: note_element
+        nbrSignaux:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: nbr_signaux
+        photoElement:
+            type: blob
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: photo_element
+    manyToOne:
+        fkArtiste:
+            targetEntity: Artiste
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_artiste:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

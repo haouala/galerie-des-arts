@@ -1,0 +1,60 @@
+<?php
+
+namespace Esprit\GalerieBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Administrateur
+ *
+ * @ORM\Table(name="administrateur")
+ * @ORM\Entity
+ */
+class Administrateur
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_admin", type="string", length=50, nullable=false)
+     */
+    private $nomAdmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom_admin", type="string", length=50, nullable=false)
+     */
+    private $prenomAdmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login_admin", type="string", length=50, nullable=false)
+     */
+    private $loginAdmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password_admin", type="string", length=50, nullable=false)
+     */
+    private $passwordAdmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="role", type="string", length=50, nullable=false)
+     */
+    private $role;
+
+
+}

@@ -1,0 +1,79 @@
+<?php
+
+namespace Esprit\GalerieBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Commentaire
+ *
+ * @ORM\Table(name="commentaire", indexes={@ORM\Index(name="fk_salle", columns={"fk_salle"}), @ORM\Index(name="fk_evenement", columns={"fk_evenement"}), @ORM\Index(name="fk_element", columns={"fk_element"}), @ORM\Index(name="fk_abonne", columns={"fk_abonne"})})
+ * @ORM\Entity
+ */
+class Commentaire
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelle_commentaire", type="string", length=50, nullable=false)
+     */
+    private $libelleCommentaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_commentaire", type="string", length=50, nullable=false)
+     */
+    private $dateCommentaire;
+
+    /**
+     * @var \Abonne
+     *
+     * @ORM\ManyToOne(targetEntity="Abonne")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_abonne", referencedColumnName="id")
+     * })
+     */
+    private $fkAbonne;
+
+    /**
+     * @var \Element
+     *
+     * @ORM\ManyToOne(targetEntity="Element")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_element", referencedColumnName="id")
+     * })
+     */
+    private $fkElement;
+
+    /**
+     * @var \Evenement
+     *
+     * @ORM\ManyToOne(targetEntity="Evenement")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_evenement", referencedColumnName="id")
+     * })
+     */
+    private $fkEvenement;
+
+    /**
+     * @var \Salle
+     *
+     * @ORM\ManyToOne(targetEntity="Salle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_salle", referencedColumnName="id")
+     * })
+     */
+    private $fkSalle;
+
+
+}

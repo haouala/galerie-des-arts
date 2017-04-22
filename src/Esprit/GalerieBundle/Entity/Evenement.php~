@@ -1,0 +1,108 @@
+<?php
+
+namespace Esprit\GalerieBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Evenement
+ *
+ * @ORM\Table(name="evenement", indexes={@ORM\Index(name="fk_artiste", columns={"fk_artiste"}), @ORM\Index(name="fk_salle", columns={"fk_salle"})})
+ * @ORM\Entity
+ */
+class Evenement
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_evenement", type="string", length=50, nullable=false)
+     */
+    private $nomEvenement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_evenement", type="string", length=50, nullable=false)
+     */
+    private $typeEvenement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_evenement", type="string", length=50, nullable=false)
+     */
+    private $dateEvenement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbr_participants", type="integer", nullable=false)
+     */
+    private $nbrParticipants;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_evenement", type="string", length=50, nullable=false)
+     */
+    private $descriptionEvenement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="note_evenement", type="integer", nullable=false)
+     */
+    private $noteEvenement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbr_signaux", type="integer", nullable=false)
+     */
+    private $nbrSignaux;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo_evenement", type="blob", nullable=false)
+     */
+    private $photoEvenement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_creation_evenement", type="string", length=50, nullable=false)
+     */
+    private $dateCreationEvenement;
+
+    /**
+     * @var \Artiste
+     *
+     * @ORM\ManyToOne(targetEntity="Artiste")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_artiste", referencedColumnName="id")
+     * })
+     */
+    private $fkArtiste;
+
+    /**
+     * @var \Salle
+     *
+     * @ORM\ManyToOne(targetEntity="Salle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_salle", referencedColumnName="id")
+     * })
+     */
+    private $fkSalle;
+
+
+}

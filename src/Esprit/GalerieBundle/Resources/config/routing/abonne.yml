@@ -1,0 +1,30 @@
+abonne:
+    path:     /
+    defaults: { _controller: "EspritGalerieBundle:Abonne:index" }
+
+abonne_show:
+    path:     /{id}/show
+    defaults: { _controller: "EspritGalerieBundle:Abonne:show" }
+
+abonne_new:
+    path:     /new
+    defaults: { _controller: "EspritGalerieBundle:Abonne:new" }
+
+abonne_create:
+    path:     /create
+    defaults: { _controller: "EspritGalerieBundle:Abonne:create" }
+    requirements: { _method: post }
+
+abonne_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EspritGalerieBundle:Abonne:edit" }
+
+abonne_update:
+    path:     /{id}/update
+    defaults: { _controller: "EspritGalerieBundle:Abonne:update" }
+    requirements: { _method: post|put }
+
+abonne_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EspritGalerieBundle:Abonne:delete" }
+    requirements: { _method: post|delete }

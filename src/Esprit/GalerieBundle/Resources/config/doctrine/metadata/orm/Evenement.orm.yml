@@ -1,0 +1,100 @@
+Evenement:
+    type: entity
+    table: evenement
+    indexes:
+        fk_artiste:
+            columns:
+                - fk_artiste
+        fk_salle:
+            columns:
+                - fk_salle
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomEvenement:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: nom_evenement
+        typeEvenement:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: type_evenement
+        dateEvenement:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: date_evenement
+        nbrParticipants:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: nbr_participants
+        descriptionEvenement:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: description_evenement
+        noteEvenement:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: note_evenement
+        nbrSignaux:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: nbr_signaux
+        photoEvenement:
+            type: blob
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: photo_evenement
+        dateCreationEvenement:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: date_creation_evenement
+    manyToOne:
+        fkArtiste:
+            targetEntity: Artiste
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_artiste:
+                    referencedColumnName: id
+            orphanRemoval: false
+        fkSalle:
+            targetEntity: Salle
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_salle:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,48 @@
+Administrateur:
+    type: entity
+    table: administrateur
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomAdmin:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: nom_admin
+        prenomAdmin:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: prenom_admin
+        loginAdmin:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: login_admin
+        passwordAdmin:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: password_admin
+        role:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

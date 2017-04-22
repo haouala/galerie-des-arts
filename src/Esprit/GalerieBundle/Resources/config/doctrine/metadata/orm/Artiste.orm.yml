@@ -1,0 +1,82 @@
+Artiste:
+    type: entity
+    table: artiste
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomAbonne:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: nom_abonne
+        prenomAbonne:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: prenom_abonne
+        dateNaissanceAbonne:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: date_naissance_abonne
+        emailAbonne:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: email_abonne
+        loginAbonne:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: login_abonne
+        passwordAbonne:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: password_abonne
+        photoArtiste:
+            type: blob
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: photo_artiste
+        domaineArt:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: domaine_art
+        role:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        isConnected:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: is_connected
+    lifecycleCallbacks: {  }

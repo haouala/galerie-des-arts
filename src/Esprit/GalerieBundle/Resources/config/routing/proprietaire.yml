@@ -1,0 +1,30 @@
+proprietaire:
+    path:     /
+    defaults: { _controller: "EspritGalerieBundle:Proprietaire:index" }
+
+proprietaire_show:
+    path:     /{id}/show
+    defaults: { _controller: "EspritGalerieBundle:Proprietaire:show" }
+
+proprietaire_new:
+    path:     /new
+    defaults: { _controller: "EspritGalerieBundle:Proprietaire:new" }
+
+proprietaire_create:
+    path:     /create
+    defaults: { _controller: "EspritGalerieBundle:Proprietaire:create" }
+    requirements: { _method: post }
+
+proprietaire_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EspritGalerieBundle:Proprietaire:edit" }
+
+proprietaire_update:
+    path:     /{id}/update
+    defaults: { _controller: "EspritGalerieBundle:Proprietaire:update" }
+    requirements: { _method: post|put }
+
+proprietaire_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EspritGalerieBundle:Proprietaire:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,30 @@
+salle:
+    path:     /
+    defaults: { _controller: "EspritGalerieBundle:Salle:index" }
+
+salle_show:
+    path:     /{id}/show
+    defaults: { _controller: "EspritGalerieBundle:Salle:show" }
+
+salle_new:
+    path:     /new
+    defaults: { _controller: "EspritGalerieBundle:Salle:new" }
+
+salle_create:
+    path:     /create
+    defaults: { _controller: "EspritGalerieBundle:Salle:create" }
+    requirements: { _method: post }
+
+salle_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EspritGalerieBundle:Salle:edit" }
+
+salle_update:
+    path:     /{id}/update
+    defaults: { _controller: "EspritGalerieBundle:Salle:update" }
+    requirements: { _method: post|put }
+
+salle_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EspritGalerieBundle:Salle:delete" }
+    requirements: { _method: post|delete }
